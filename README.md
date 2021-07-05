@@ -1,1 +1,1 @@
-# gd-live2
+# Group discussion project
