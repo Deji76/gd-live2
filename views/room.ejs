@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GDLive</title>
+    <script>
+        const ROOM_ID = "<%= roomId %>"
+
+    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.1/peerjs.min.js"></script>
+
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/js/script.js" defer></script>
+    <title>Document</title>
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/Room.css">
+</head>
+
+<body>
+    <div id="video-grid"></div>
+    
+    
+    <div class="endbox">
+    <button id="endButton" class="endButton" onclick="endMeeting()"><img src="/images/closebutton.png"
+            alt="closebutton"></button>
+    </div>
+    <div class="DialogBox">
+        <p><b> Give this URL to the people you want to invite:</b> </p>
+        <input id="meeting-link">
+        <div onclick="copyToClipBoard()" class="copy-text">
+            <img src="/images/copy.png" alt="">
+            <div class="urlcopy"><b>Copy this URL</b>  </div>
+        </div>    
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>

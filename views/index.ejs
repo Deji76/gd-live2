@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat-Realtime Node socket.io chat app</title>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/css/msg.css">
+    <script defer src="js/script2.js"></script>
+</head>
+
+<body>
+    <img class="logo" src="images/images.jpg" alt="Ichat">
+    <h1>*_* Let's satrt group-discussion :)</h1>
+    <div class="container">
+    </div>
+    <div class="send">
+        <form action="#" id="send-container">
+            <input type="text" name="messageInp" id="messageInp">
+            <button class="btn" type="submit">send</button>
+        </form>
+    </div>
+    <div class="endbox">
+        <button id="endButton" class="endButton" onclick="endMeeting()"><img src="/images/closebutton.png"
+                alt="closebutton"></button>
+    </div>
+    <div class="DialogBox" id="DialogBox">
+        <p><b> Give this URL to the people you want to invite:</b> </p>
+        <input id="meeting-link">
+        <div onclick="copyToClipBoard()" class="copy-text">
+            <img src="/images/copy.png" alt="">
+            <div class="urlcopy"><b>Copy this URL</b> </div>
+           
+        </div>
+        <div style="text-align: right;"><button onclick="closepopup()">OK</button></div>
+    </div>
+
+</body>
+
+</html>

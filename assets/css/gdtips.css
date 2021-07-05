@@ -1,0 +1,155 @@
+.breadcrumb{
+  margin-bottom: auto;
+   height: 35px;
+} 
+nav-item{
+    background-color: white;
+    min-height: 110px;
+}
+.images{
+    height:75px;
+    width:75px;
+}
+.site-title{
+    font-size: 34px;
+}
+.site-title{
+    clear: none;
+    font-family: "Merriweather Sans",sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 6px;
+    margin-right: auto;
+    color: #294a70;
+}
+a, a:visited {
+    text-decoration: inherit;
+    background-color: transparent;
+}
+.breadcrumb{
+    background-color:#294a70;
+}
+#nav{
+    background-color:#294a70;
+}
+.btn{
+    background-color:#294a70;
+    color:white;
+    font-weight: bold;
+}
+.dropdown{
+    margin-top:auto;
+    margin-bottom: auto;
+}
+.dropdown-menu{
+    background-color:lightblue;
+}
+.blog {
+    margin-top: 0px;
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.blog .column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+.blog .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.pic1 {
+    padding: 10px;
+    left: 10px;
+    height: 427px;
+    background-color: rgb(125, 0, 150);
+    color: white;
+}
+
+.pic2 {
+    padding: 10px;
+    left: 10px;
+    height: 427px;
+    background-color: rgba(10, 88, 233, 0.459);
+    color: white;
+}
+
+/* .pic2:hover {
+    padding: 10px;
+    left: 10px;
+    height: 427px;
+    background-color: rgba(7, 89, 241, 0.582);
+    color: white;
+} */
+
+.pic {
+    border-left-width: 15px;
+    border-color: darkgreen;
+    border-style: solid;
+    border-bottom-width: 15px;
+    height: 417px;
+    border-top-width: 15px;
+    border-right-width: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.piccontent {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 390px;
+    padding: 10px;
+    box-sizing: border-box;
+    /* margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px; */
+    margin-right:0px; 
+    /* transition: all 0.5s; */
+    border-left: 3px solid black;
+}
+
+/* .pic:hover .piccontent {
+    left: 0;
+} */
+
+.piccontent h1 {
+    margin-top: 0px;
+    color: black;
+}
+
+.piccontent p {
+    margin-top: 0px;
+
+}
+
+.pic3 {
+    padding: 10px;
+    left: 10px;
+    height: 427px;
+    background-color: rgba(245, 150, 7, 0.979);
+    color: black;
+    border: 2px solid green;
+}
+
+.blog .col2 {
+    /* border: 2px solid blue; */
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.blog .col1 {
+    /* border: 2px solid red; */
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}

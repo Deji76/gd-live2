@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GDLive</title>
+    <script src="/js/landing.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Grandstander:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/gdtips.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"></li>
+        </ol>
+    </nav>
+    <nav class="navbar navbar-white bg-white" id="nav">
+        <a class="navbar-brand"><img class="images" src="/images/download.jpg" alt="pic"></a>
+        <p class="site-title">Live Group Discussion</p>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light" id="nav">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="homePage.ejs"><button class="btn btn-primary" type="Home">Home</button>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="active">
+                    <a class="nav-link" href="Latestpost.ejs"><button class="btn btn-primary" type="button"
+                            value="google.com">GD-tips
+                        </button></a>
+                </li>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="screen-reader-text"></span>
+                        Categories
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Current
+                                Affairs</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Abstract
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">General Toics
+                            </a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Social Issues
+                            </a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Economic
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Political Topics
+                            </a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Educational
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Technology
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Environmental
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">International
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Science
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Ethical
+                                Topics</a></button>
+                    </div>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button class="btn btn-primary" type="latest post">All
+                            GD Topics</button></a>
+                </li>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="screen-reader-text"></span>
+                        Level
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Easy
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Medium Level
+                                Topics</a></button>
+                        <button class="dropdown-item" type="button"><a class="dropdown-item" href="#">Advanced Topics
+                            </a></button>
+                    </div>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="writeus.ejs"><button class="btn btn-primary" type="latest post">write to
+                            us</button></a>
+                </li>
+        </div>
+        </li>
+        </ul>
+        </div>
+    </nav>
+    <!-- <p>1.        </p>
+    <p>
+        </p>
+        <p>Tip 3: Summarizing or Concluding
+            Most GD’s don’t really have conclusions. A conclusion is where the whole group decides in favor or against the topic, but every GD is summarized. You can take the opportunity to summaries what the group has discussed in the GD in a nutshell. 
+            Keep the following points in mind while summarizing a discussion:
+            
+            Avoid raising new points.
+            Avoid stating only your viewpoint.
+            Avoid dwelling only on one aspect of the GD.
+            Keep it brief and concise.
+            It must incorporate all the important point that came out during the GD.
+            If the examiner asks you to summaries a GD, it means the GD has come to an end. Do not add anything once the GD has been summarized.
+            </p>
+        <p>Tip 4:
+            Always be the initiator and concluder of the Group Discussion then being a participant.
+            But if you are participant always try to be the most key participant.
+            Put points firmly and always try to get others support too.
+            If you find that the discussion is going off the track then never loose an opportunity to bring it back to stream this is the best point to score max.
+            Try to keep latest information on the topic.
+            Be very polite, people may try to provoke you to get more points but try to keep cool.
+            Most important , don’t wait for your turn to speak when discussion is on. Interrupt politely if you want to put forward your points.
+            Last but not the least keep a tab on the times given for discussion. Score points by wrapping up the discussion if you feel that the discussion is heating but the same time is going to over.
+            During conclusion, do end with the conclusion note. That shows your leadership quality.
+            
+            </p>
+            <p>2. Do’s and Don’ts
+
+
+                Be Yourself:
+                You should try to be as natural as possible. Do not try & be someone you are not.
+                
+                Speak Out:
+                Make the best of this opportunity, the evaluator wants to hear you speak. A GD is a chance to be more vocal.
+                
+                Think before you speak:
+                Take time to organize your thoughts. Think of what you are going to say.
+                
+                Seek Clarification:
+                If you are not clear and you have doubts regarding the subject, ask for clarification before the GD begins.
+                
+                Be confident before you speak:
+                Don’t start speaking until you have clearly understood and analyzed the subject.
+                
+                Begin smartly:
+                Work out various strategies to help you make an entry, initiate the discussion or agree with someone else’s point and then move onto express your views.
+                
+                
+                
+                Adding valuable thoughts:
+                Opening the discussion is not the only way of gaining attention and recognition. If you do not give valuable insights during the discussion, all your efforts of initiating the discussion will be in vain.
+                
+                Good body language:
+                You body language says a lot about you – your gesture and mannerism are more likely to reflect your attitude than what you say.
+                
+                Usage of effective language:
+                Language skills are important only to the effect as to how you get your points across clearly and fluently.
+                
+                Maintain your tone while communicating:
+                Be assertive not dominating; try to maintain a balance tone in your discussion and analysis.
+                
+                Be Patience:
+                Don’t lose your cool if anyone says anything you object to. The key is to stay objective: Don’t take the discussion personally.
+                
+                Be polite:
+                Try avoid using extreme phrases like: ‘I strongly object’ or ‘I disagree’. Instead try phrases like: ‘I would like to share my views on…’ or ‘One difference between your point and mine…’ or ‘I beg to differ with you’.
+                
+                Motivating others to speak:
+                This will demonstrate your leadership skills. You may motivation the other team members to speak but you need to identify the right time to do that. Also, don’t keep repeating the same thing as you may lose your time to speak and this may show too much of leadership. Be receptive to others opinion and do not be abrasive or aggressive.
+                
+                Practice:
+                If you have a group of like-minded friends, you can have a mock group discussion where you can learn from each other through giving and receiving feedback. Apart from the above points, the panel will also judge team member for their alertness and presence of mind, problem-solving abilities, ability to work as a team without alienating certain members, and creativity.
+                
+                Do’s:
+                Listen to others. It is not necessary to initiate a Group Discussion. 
+                Initiate the discussion if you are familiar with the topic.
+                Intervene if the discussion is turning out to be hostile. It reflects your
+                Leadership.
+                Speak to the point without Repeating .
+                Back your points with Facts and Figures.
+                Be gentle with your presentation.
+                Be Natural, Calm and Maintain your Composure.
+                Be Participative and Reciprocative.
+                Say ‘Thank You’ before ending your presentation.
+                Think before you speak.
+                Say what you feel, without going in “Favour”/”Against”.
+                
+                Don’ts:
+                Do not be loud or aggressive.
+                Do not go overboard with enthusiasm if you are familiar with the topic.
+                Do not interrupt other speakers.
+                Do not deprecate other speakers.
+                Do not speak first if you are unfamiliar with the topic. Grab the opportunity to speak, you also grab the attention of the examiner and your fellow candidates.
+                Do not change your opinions.
+                Do not ask irrelevant questions.
+                Do not stop abruptly.
+                Do not get nervous if the previous speakers have presented their points in a better way.
+                Do not exhibit your emotions.
+                
+                
+                </p> -->
+    <div class='blog'>
+        <div class="col1">
+            <div class="pic"><img src="/images/discussion.jpg" style="width:100%; height: 417px;">
+                <div class="piccontent">
+                    <h1>TIP 1</h1>
+                    <P>
+                        Tip 1: Initial Techniques <br>
+                        Initiating a GD is a high profit-high loss strategy. When you initiate a GD, You not only grab
+                        the opportunity to speak, you also grab the attention of the examiner and your fellow
+                        candidates. <br>
+                        If you can make a favorable first impression with your content and communication skills after
+                        you initiate a GD, it will help you sail through the discussion. But if you initiate a GD and
+                        stammer/stutter/quote wrong facts and figures, the damage might be irreparable.
+                        If you initiate a GD impeccably but don’t speak much after that, it gives the impression that
+                        you started the GD for the sake of starting it or getting those initial kitty of points
+                        earmarked for an initiator! <br>
+                        When you start a GD, you are responsible for putting it into the right perspective or framework.
+                        So initiate one only if you have in-depth knowledge about the topic at hand.
+                    </P>
+                </div>
+            </div>
+            <div class="pic"><img src="/images/discussion.jpg" style="width:100%; height: 417px;">
+                <div class="piccontent">
+                    <h1>TIP 3</h1>
+                    <P> Tip 3: Summarizing or Concluding <br>
+                        Most GD’s don’t really have conclusions. A conclusion is where the whole group decides in favor
+                        or against the topic, but every GD is summarized. You can take the opportunity to summaries what
+                        the group has discussed in the GD in a nutshell.
+                        Keep the following points in mind while summarizing a discussion: <br>
+
+                        Avoid raising new points. <br>
+                        Avoid stating only your viewpoint. <br>
+                        Avoid dwelling only on one aspect of the GD. <br>
+                        Keep it brief and concise. <br>
+                        It must incorporate all the important point that came out during the GD. <br>
+                        If the examiner asks you to summaries a GD, it means the GD has come to an end. Do not add
+                        anything once the GD has been summarized. <br>
+                    </P>
+                </div>
+            </div>
+            <div class="pic3" style="background-color:rgba(201, 52, 15, 0.719)">
+                <p style="border-left: 5px solid black; margin: 10px; padding-left:10px;">" Complete Dictionary of
+                    Scientific Biography. Vol. 11. Detroit: Charles Scribner's Sons,2008. 40–41. Gale
+                    Virtual Reference Library. Web. 4 June 2013."
+                    <br>
+                    <br>
+                    - robert cheors.
+                </p>
+                <br>
+                <br>
+                <p style="text-align:right;border-right:5px solid black; padding-right: 10px;">
+                    “Wizard of Menlo Park,” was one of the greatest inventors the world has known. His nearly 1,100
+                    patents exceed that of any other inventor in American history, and his inventions were foundational
+                    across a bewildering array of domains, from electronics to medicine to chemical research.
+                    <br>
+                    <br>
+                    -Thomas Edison
+                </p>
+                <br><br>
+                <p style="border-left:5px solid black; padding-left: 10px;">
+                    “Wizard of Menlo Park,” was one of the greatest inventors the world has known. His nearly 1,100
+                    patents exceed that of any other inventor in American history, and his inventions were foundational
+                    across a bewildering array of domains, from electronics to medicine to chemical research.
+                    <br>
+                    <br>
+                    -Thomas Edison
+                </p>
+            </div>
+            <div class="pic3" style="background-color:white">
+
+            </div>
+
+            <div class="pic3">
+                <p style="border-left: 5px solid black; margin: 10px; padding-left:10px;">" Complete Dictionary of
+                    Scientific Biography. Vol. 11. Detroit: Charles Scribner's Sons,2008. 40–41. Gale
+                    Virtual Reference Library. Web. 4 June 2013."
+                    <br>
+                    <br>
+                    - robert cheors.
+                </p>
+                <br>
+                <br>
+                <p style="text-align:right;border-right:5px solid black; padding-right: 10px;">
+                    “Wizard of Menlo Park,” was one of the greatest inventors the world has known. His nearly 1,100
+                    patents exceed that of any other inventor in American history, and his inventions were foundational
+                    across a bewildering array of domains, from electronics to medicine to chemical research.
+                    <br>
+                    <br>
+                    -Thomas Edison
+                </p>
+                <br><br>
+                <p style="border-left:5px solid black; padding-left: 10px;">
+                    “Wizard of Menlo Park,” was one of the greatest inventors the world has known. His nearly 1,100
+                    patents exceed that of any other inventor in American history, and his inventions were foundational
+                    across a bewildering array of domains, from electronics to medicine to chemical research.
+                    <br>
+                    <br>
+                    -Thomas Edison
+                </p>
+
+            </div>
+        </div>
+
+        <div class="col2">
+            <div class="pic"><img src="/images/discussion.jpg" style="width:100%; height: 417px;">
+                <div class="piccontent">
+                    <h1>TIP 2</h1>
+                    <P> Tip 2: Body of The Group Discussion
+                        Different techniques to initiate a GD and make a good first impression are: <br>
+                        1. Quotes <br>
+                        2. Definition <br>
+                        3. Question <br>
+                        4. Shock statement <br>
+                        5. Facts, figures and statistics <br>
+                        6. Short story <br>
+                        7. General statement <br>
+                        1. Quotes – are an effective way of initiating a GD.
+                        Example: If the topic of a GD is – Should the Censor Board be abolished? You could start with a
+                        quote like, ‘Hidden apples are always sweet’.
+                    </p>
+                </div>
+                <div class="pic"><img src="/images/discussion.jpg" style="width:100%; height: 417px;">
+                    <div class="piccontent">
+                        <h1>TIPS 1</h1>
+                        <P> Tip 2: Body of The Group Discussion
+                            Different techniques to initiate a GD and make a good first impression are: <br>
+                            1. Quotes <br>
+                            2. Definition <br>
+                            3. Question <br>
+                            4. Shock statement <br>
+                            5. Facts, figures and statistics <br>
+                            6. Short story <br>
+                            7. General statement <br>
+                            1. Quotes – are an effective way of initiating a GD.
+                            Example: If the topic of a GD is – Should the Censor Board be abolished? You could start
+                            with a
+                            quote like, ‘Hidden apples are always sweet’.
+                        </p>
+                    </div>
+                    <div class="pic"><img src="/images/discussion.jpg" style="width:100%; height: 417px;">
+                        <div class="piccontent">
+                            <h1>TIPS 1</h1>
+                            <P> Tip 2: Body of The Group Discussion
+                                Different techniques to initiate a GD and make a good first impression are: <br>
+                                1. Quotes <br>
+                                2. Definition <br>
+                                3. Question <br>
+                                4. Shock statement <br>
+                                5. Facts, figures and statistics <br>
+                                6. Short story <br>
+                                7. General statement <br>
+                                1. Quotes – are an effective way of initiating a GD.
+                                Example: If the topic of a GD is – Should the Censor Board be abolished? You could start
+                                with a
+                                quote like, ‘Hidden apples are always sweet’.
+                            </p>
+                        </div>
+                        <div class="pic2">
+                            <h2>A Post about thing and stuff</h2><br>
+                            <i style='font-size:20px;color:white' class='fas'>&#xf133;</i> Feb 26th, 2017
+                        </div>
+                        <div class="pic3" style="background-color:white">
+                        </div>
+                    </div>
+                </div>
+            <div>
+
+
+
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                    crossorigin="anonymous"></script>
+</body>
